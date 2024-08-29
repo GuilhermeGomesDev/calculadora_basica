@@ -19,6 +19,12 @@ function appendNumber(number) {
 function appendOperator(operator) {
     const display = document.getElementById('display'); // Seleciona o campo de input que representa o visor
     
+     // Se o resultado foi exibido e o usuário pressiona um operador,
+    // permite que o usuário continue utilizando o resultado para novas operações
+    if (isResultDisplayed) {
+        isResultDisplayed = false; // Reseta a flag para permitir novas operações
+    }
+    
     // Adiciona o operador pressionado ao conteúdo atual do display
     display.value += operator;
 }
